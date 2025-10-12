@@ -1,0 +1,17 @@
+@use 'sass:map';
+
+// Variáveis para caminhos de imagens
+$image-paths: (
+  'hero': '../../../assets/images/hero-bg.jpg',
+  'inscricao': '../../../assets/images/inscricao-bg.jpg',
+  'preletores': '../../../assets/images/preletores-bg.jpg'
+);
+
+// Mixin para background-image
+@mixin background-image($image-key) {
+  $path: map.get($image-paths, $image-key);
+  background-image: url($path);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
