@@ -8,4 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sobre.html',
   styleUrls: ['./sobre.scss']
 })
-export class SobreComponent {}
+export class SobreComponent {
+  // Podemos adicionar lógica aqui se necessário
+}
