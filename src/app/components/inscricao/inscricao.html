@@ -1,37 +1,46 @@
 <section class="inscricao-section" id="inscricao">
+    <div class="hero-overlay"></div>
     <div class="container">
-        <h2>Faça sua Inscrição</h2>
-        <div class="form-container">
-            <form [formGroup]="inscricaoForm" (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                    <label for="nome">Nome Completo</label>
-                    <input type="text" id="nome" formControlName="nome" class="form-control">
-                </div>
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h2>SEJA PARTE DESTA JORNADA</h2>
+                <p class="subtitle">Transforme sua vida e descubra seu verdadeiro propósito como homem</p>
+            </div>
+            <div class="form-container">
+                <form [formGroup]="inscricaoForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" formControlName="nome" class="form-control" placeholder="Digite seu nome completo">
+                    </div>
 
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" formControlName="email" class="form-control">
-                </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" formControlName="email" class="form-control" placeholder="Digite seu e-mail">
+                        </div>
 
-                <div class="form-group">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" formControlName="telefone" class="form-control">
-                </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" formControlName="telefone" class="form-control" placeholder="(00) 00000-0000">
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="igreja">Igreja</label>
-                    <input type="text" id="igreja" formControlName="igreja" class="form-control">
-                </div>
+                    <div class="form-group">
+                        <label for="igreja">Igreja</label>
+                        <input type="text" id="igreja" formControlName="igreja" class="form-control" placeholder="Nome da sua igreja">
+                    </div>
 
-                <div class="form-group">
-                    <label for="expectativas">Expectativas para o Evento</label>
-                    <textarea id="expectativas" formControlName="expectativas" class="form-control" rows="4"></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="expectativas">Sua Jornada</label>
+                        <textarea id="expectativas" formControlName="expectativas" class="form-control" rows="4" 
+                            placeholder="Conte-nos um pouco sobre suas expectativas para este evento"></textarea>
+                    </div>
 
-                <button type="submit" class="submit-button" [disabled]="!inscricaoForm.valid">
-                    Confirmar Inscrição
-                </button>
-            </form>
+                    <button type="submit" class="btn-submit" [disabled]="!inscricaoForm.valid">
+                        INICIAR MINHA JORNADA
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </section>
