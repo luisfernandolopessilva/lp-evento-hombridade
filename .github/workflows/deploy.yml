@@ -1,0 +1,40 @@
+# Nome do seu workflow. Aparecerá na aba "Actions" do GitHub.
+name: Deploy para Hospedagem via FTP
+
+# Gatilho (trigger): Define quando a Action deve rodar.
+# Neste caso, a cada 'push' (envio de código) para a branch 'main'.
+on:
+  push:
+    branches:
+      - main  # Mude para 'master' se for o nome da sua branch principal
+
+# Tarefas (jobs): Define o que será executado.
+jobs:
+  # Nome da tarefa
+  ftp-deploy:
+    # O tipo de máquina virtual que irá rodar a tarefa
+    runs-on: ubuntu-latest
+
+    # Passos (steps) que a tarefa executará em sequência
+    steps:
+    # 1. Passo para baixar o código do seu repositório para a máquina virtual
+    - name: 🚚 Checkout do repositório
+      uses: actions/checkout@v4
+
+    # 2. Passo que faz o upload dos arquivos para o servidor FTP
+    - name: 🚀 Deploy dos arquivos via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        # Servidor FTP (lido do secret que criamos)
+        server: ${{ secrets.FTP_SERVER }}
+        
+        # Usuário FTP (lido do secret)
+        username: ${{ secrets.FTP_USERNAME }}
+        
+        # Senha FTP (lida do secret)
+        password: ${{ secrets.FTP_PASSWORD }}
+        
+        # Pasta de destino no servidor.
+        # Descomente e ajuste a linha abaixo conforme sua necessidade.
+        # Verifique se é /public_html, /httpdocs, /www, ou outra.
+        # server-dir: public_html/
