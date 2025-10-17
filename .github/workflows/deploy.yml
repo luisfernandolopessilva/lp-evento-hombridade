@@ -31,7 +31,7 @@ jobs:
 
     # 4. Compilação (Build) do projeto Angular para produção
     - name: 🏭 Build do projeto Angular
-      run: ng build --configuration production
+      run: npx ng build --configuration production
 
     # 5. Deploy dos arquivos da pasta 'dist' via FTP
     - name: 🚀 Deploy dos arquivos via FTP
