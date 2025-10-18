@@ -49,4 +49,4 @@ jobs:
         # Pasta de destino no servidor.
         # Descomente e ajuste a linha abaixo conforme sua necessidade.
         # Verifique se é /public_html, /httpdocs, /www, ou outra.
-        server-dir: public_html/hombridade
+        server-dir: public_html/hombridade/
