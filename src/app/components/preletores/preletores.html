@@ -1,1 +1,17 @@
-<p>preletores works!</p>
+<section class="preletores">
+    <div class="container">
+        <h2>Nossos Preletores</h2>
+        <div class="preletores-grid">
+            <div *ngFor="let preletor of preletores" class="preletor-card">
+                <div class="preletor-foto">
+                    <img [src]="preletor.foto" [alt]="preletor.nome">
+                </div>
+                <div class="preletor-info">
+                    <h3>{{preletor.nome}}</h3>
+                    <h4>{{preletor.titulo}}</h4>
+                    <p>{{preletor.bio}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
